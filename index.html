@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GABRIEL RETARDADO</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura total da janela */
+            margin: 0; /* Remove margens */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+           background-image: url(https://m.media-amazon.com/images/I/61HxDA0CqxL._AC_UF1000,1000_QL80_.jpg); /* URL da imagem de fundo com rosas vermelhas */
+            background-size: cover; /* Cobre toda a área */
+            position: relative; /* Permite que os filhos usem posições absolutas */
+        }
+
+        .container {
+            text-align: center; /* Centraliza o texto */
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo vermelho com transparência */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            width: 380px; /* Largura fixa */        
+            position: relative; /* Para controlar a posição dos filhos */
+            z-index: 10; /* Garante que fique acima do fundo */
+        }
+
+        h1 {
+            font-size: 40px; /* Tamanho do título */
+            margin-bottom: 28px; /* Espaçamento abaixo do título */
+        }
+
+        .button {
+            background-color: #000000; /* Cor de fundo dos botões */
+            color: white; /* Cor do texto */
+            border: none; /* Remove borda padrão */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px 20px; /* Espaçamento interno do botão */
+            cursor: pointer; /* Cursor de ponteiro */
+            font-size: 16px; /* Tamanho da fonte */
+            margin: 14px; /* Espaçamento entre os botões */
+            transition: background-color 0.3s; /* Transição suave para a cor do fundo */
+        }
+
+        .button:hover {
+            background-color: #ffffff; /* Cor ao passar o mouse */
+        }
+
+        .button:focus {
+            outline: none; /* Remove o contorno padrão do botão ao focar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>me da um volante de casamento?</h1>
+        <button class="button" onclick="responder('sim')">claro</button>
+        <button class="button" id="nao" onclick="responder('nao')">eu Não </button>
+    </div>
+
+    <script>
+        function responder(resposta) {
+            if (resposta === 'sim') {
+                alert('sabia, nao tinha como recusar né. fico no aguardo!');
+            } else {
+                // Troca a posição do botão "Não"
+                const botaoNao = document.getElementById('nao');
+                const container = document.querySelector('.container');
+
+                // Define uma nova posição aleatória para o botão "Não"
+                const randomTop = Math.random() * (container.offsetHeight - 50);
+                const randomLeft = Math.random() * (container.offsetWidth - 100);
+                
+                botaoNao.style.position = 'absolute';
+                botaoNao.style.top = randomTop + 'px';
+                botaoNao.style.left = randomLeft + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
